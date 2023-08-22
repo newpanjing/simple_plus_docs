@@ -2,7 +2,7 @@ export default {
     lang: 'zh-CN',
     ignoreDeadLinks: true,
     title: 'SimplePro',
-
+    base:'/docs/simplepro/',
     themeConfig: {
         siteTitle: 'SimplePro 文档',
         logo: '/logo.png',
