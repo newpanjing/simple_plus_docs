@@ -73,11 +73,7 @@ urlpatterns = [
 
 ```
 
-## 完整的Demo
-
-如果您比较迷茫，您可以直接下载我们配置好的Demo进行操作，只需要替换Demo中的安全秘钥即可。
-
-[Demo源码](https://github.com/newpanjing/simplepro_demo)
+## 5. 配置安全秘钥
 
 `settings.py`文件
 
@@ -85,3 +81,17 @@ urlpatterns = [
 # 安全秘钥，登录官方网站点击我的头像，获取秘钥
 SIMPLEPRO_SECRET_KEY = 'b16742bcc30c4662a57c6602792437e3'
 ```
+
+::: tip 安全秘钥获取
+
+登录到社区 https://www.mldoo.com，点击我的许可证即可查看。
+
+:::
+
+![](/key.jpg)
+
+## 完整的Demo
+
+如果您比较迷茫，您可以直接下载我们配置好的Demo进行操作，只需要替换Demo中的安全秘钥即可。
+
+[Demo源码](https://github.com/newpanjing/simplepro_demo)
