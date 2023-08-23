@@ -23,6 +23,7 @@ export default {
             pattern: 'https://github.com/newpanjing/simple_plus_docs/edit/main/docs/:path'
         },
         nav: [
+            { text: '社区', link: 'https://www.mldoo.com' },
             { text: '首页', link: '/' },
             { text: '指南', link: '/guide/description' },
             { text: '配置', link: '/config/global/' },
