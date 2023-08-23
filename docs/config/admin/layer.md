@@ -4,7 +4,11 @@
 
 对话框按钮是在 admin 中进行配置 action，可以自定义输入的字段，然后通过 ajax 请求到 action 中进行业务的处理。
 
+::: tip 特别注意
+ 
 需要继承`AjaxAdmin` 在`from simpleui.admin import AjaxAdmin`包中
+
+:::
 
 `simplepro`也会同步支持对话框按钮功能。
 

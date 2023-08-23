@@ -25,11 +25,32 @@ pip install simplepro -i https://pypi.mirrors.ustc.edu.cn/simple/
     'simpleui',
     'import_export',
     ......
-]   
+] 
+
+# 配置安全秘钥
+SIMPLEPRO_SECRET_KEY = '您的安全秘钥'
+
 ```
 
 > simplepro 是核心程序，simpleui是皮肤，import_export是用于实现导入和导出的插件
 
+## 3. 配置中间件
+
+```python
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 加入simplepro的中间件
+    'simplepro.middlewares.SimpleMiddleware'
+]
+```
+
+## 4. 配置URL
 
 然后在项目的urls.py中加入这句：
 
