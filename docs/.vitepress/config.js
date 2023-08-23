@@ -30,10 +30,9 @@ export default {
             {
                 text: '版本', items: [
                     { text: 'v7.0', link: '/version/7.0' },
-                    { text: 'v6.x', link: 'https://simpleui.72wo.com/docs/simplepro' },
                 ]
             },
-            { text: '演示', link: 'https://simplepro.demo.72wo.com' },
+            { text: '演示', link: 'https://www.mldoo.com/demo/simplepro' },
         ],
         sidebar: {
             '/': [

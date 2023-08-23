@@ -12,7 +12,7 @@ Simple Pro 7.0 正式推出域名激活的方式，不再以设备数量作为�
 
 [立即购买](https://www.mldoo.com/simplepro)
 
-[查看Demo](https://simplepro.demo.72wo.com)
+[查看Demo](https://www.mldoo.com/demo/simplepro)
 
 [安装文档](/guide/project_config.html)
 

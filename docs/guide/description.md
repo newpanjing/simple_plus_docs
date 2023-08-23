@@ -18,7 +18,7 @@
 + 自定义对话框
 + ...等等
 
-与其介绍这么多，不如亲自点击 <a href="https://simplepro.demo.72wo.com/" target="_blank">在线演示Demo查看</a> 一番
+与其介绍这么多，不如亲自点击 <a href="https://www.mldoo.com/demo/simplepro" target="_blank">在线演示Demo查看</a> 一番
 
 > 用户名：simpleui
 

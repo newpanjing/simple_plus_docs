@@ -2,7 +2,7 @@
 
 ## 在线Demo
 
-https://simplepro.demo.72wo.com/
+https://www.mldoo.com/demo/simplepro/
 
 ## 源码
 
