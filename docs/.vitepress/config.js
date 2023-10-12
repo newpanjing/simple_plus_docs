@@ -30,6 +30,7 @@ export default {
             { text: '组件', link: '/widget/checkbox' },
             {
                 text: '版本', items: [
+                    { text: 'v7.1', link: '/version/7.1' },
                     { text: 'v7.0', link: '/version/7.0' },
                 ]
             },
