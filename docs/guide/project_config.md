@@ -2,6 +2,11 @@
 
 由于 Simple Pro是基于Django Admin的，所以您需要先建一个Django的项目，然后安装Simple Pro插件。
 
+::: tip 安全秘钥获取
+
+登录到社区 https://www.mldoo.com，点击右上角头像，"我的许可证" 即可查看。
+
+:::
 
 ## 1. 安装Simple Pro
 
@@ -78,7 +83,7 @@ urlpatterns = [
 `settings.py`文件
 
 ```python
-# 安全秘钥，登录官方网站点击我的头像，获取秘钥
+# 安全秘钥，登录官方网站点击我的头像(https://www.mldoo.com)，获取秘钥
 SIMPLEPRO_SECRET_KEY = 'b16742bcc30c4662a57c6602792437e3'
 ```
 
