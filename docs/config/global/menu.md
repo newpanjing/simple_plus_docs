@@ -100,4 +100,8 @@ SIMPLEUI_CONFIG = {
 
 如果SIMPLEUI_CONFIG中存在menus字段，将会覆盖系统默认菜单。并且menus中输出的菜单不会受权限控制。
 
-需要权限控制参考[自定义菜单权限](./permissions.md)
+需要权限控制参考[自定义菜单权限](/config/permissions.md)
+
+## 自定义菜单权限
+
+教程参考：[自定义菜单权限](https://www.mldoo.com/topic/221)

@@ -25,6 +25,7 @@ export default {
         nav: [
             {text: '社区', link: 'https://www.mldoo.com'},
             {text: '首页', link: '/'},
+            {text: '路线图🗺', link: '/roadmap'},
             {text: '指南', link: '/guide/description'},
             {text: '配置', link: '/config/global/'},
             {text: '组件', link: '/widget/checkbox'},
