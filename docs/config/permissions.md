@@ -110,6 +110,19 @@ python3 manage.py makemigrations
 
 2. 第二种，直接在`认证和授权->权限`该项菜单中，用表格的形式直接添加。但是菜单的codename要与`内容类型`的codename一致。
 
+::: tip 自动配置数据库
+
+Simple Pro 提供了一个自定义 命令来简化这些操作，只需要在`settings.py`中配置好`SIMPLEPRO_CONFIG`，然后执行以下命令即可。
+
+```shell
+python3 manage.py migrate_menu
+
+```
+
+执行完成后，去权限或者用户编辑，勾选上自定义菜单即可。
+
+:::
+
 
 
 ### 自定义示例
