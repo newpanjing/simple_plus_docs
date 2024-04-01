@@ -16,16 +16,16 @@ simplepro table 基于 elementui table，设置主要来自 ModelAdmin，写法�
 | actions_show                                     | boolean                  | 显示隐藏 action，默认为 True，只有显式指定为 False 的时候才隐藏          |
 | actions                                          | array                    | [自定义按钮](/config/admin/action)                                                |
 | native_render                                    | boolean                  | 使用原生页面渲染，默认为`Flase`                                          |
-| [list_filter_multiples](##list-filter-multiples) | array                    | 自`3.1`版本起可用，搜索下拉框多选字段，比如要在`list_filter`中包含才生效 |
+| [list_filter_multiples](#list-filter-multiples) | array                    | 自`3.1`版本起可用，搜索下拉框多选字段，比如要在`list_filter`中包含才生效 |
 | [top_html](#top-html)                            | str                      | 列表顶部显示的 html，支持 vue 组件和 element 组件，`3.1.3+` 可用         |
 | [bottom_html](#bottom-html)                      | str                      | 列表底部显示的 html，支持 vue 组件和 element 组件，`3.1.3+` 可用         |
-| [empty_value_display](#empty_value_display)                      | fun                      | 列表默认显示的空值，`5.3+`可用，`get_empty_value_display`也支持         |
-| [list_filter_tree](#list_filter_tree)                      | tuple或fun                      | 列表页树形下拉框过滤器，`6.0+`可用，`get_list_filter_tree`也支持         |
-| [get_list_filter_tree_queryset](#get_list_filter_tree_queryset)                      | fun                      | 列表页树形下拉框过滤器自定义queryset对象，`6.0+`可用|
-| [list_display_tree_cascade](#list_display_tree_cascade) | str | 表格显示为树形，`6.0+`可用 |
-| [list_display_tree_expand_all](#list_display_tree_cascade) | boolean | 表格树形展开状态，`6.0+`可用，默认为`False`不展开，这个要配合`list_display_tree_cascade`使用才有效|
-| [show_selection](#show_selection) | boolean | 设置表格显示复选框，默认为`True`显示复选框 |
-| [between_fields](#between_fields) | array | 使用区间搜索，常用于数值类型 |
+| [empty_value_display](#empty-value-display)                      | fun                      | 列表默认显示的空值，`5.3+`可用，`get_empty_value_display`也支持         |
+| [list_filter_tree](#list-filter-tree)                      | tuple或fun                      | 列表页树形下拉框过滤器，`6.0+`可用，`get_list_filter_tree`也支持         |
+| [get_list_filter_tree_queryset](#get-list-filter-tree-queryset)                      | fun                      | 列表页树形下拉框过滤器自定义queryset对象，`6.0+`可用|
+| [list_display_tree_cascade](#list-display-tree-cascade) | str | 表格显示为树形，`6.0+`可用 |
+| [list_display_tree_expand_all](#list-display-tree-cascade) | boolean | 表格树形展开状态，`6.0+`可用，默认为`False`不展开，这个要配合`list_display_tree_cascade`使用才有效|
+| [show_selection](#show-selection) | boolean | 设置表格显示复选框，默认为`True`显示复选框 |
+| [between_fields](#between-fields) | array | 使用区间搜索，常用于数值类型 |
 
 
 ## top_html
@@ -405,11 +405,44 @@ class XXXAdmin(model.ModelAdmin):
 > 注：树形表格与普通表格所有的用法大部分一致，只是多了个list_display_tree_cascade属性
 > 同时树形表格分页的数据都是根节点的，子节点不参与分页。
 
+::: tip 特别注意
+
+这个model中必须要有个字段为`name`，`list_display`中也必须要有个字段为`name`，否则无法显示树形或报错。
+
+如果model没有name，可以使用[自定义列](#自定义列)来代替
+
+:::
+
 > 如果想实现一些数据过滤，可以通过重写get_queryset方法来实现。
 
 例子如下：
 
 ```python
+
+class TreeTable(models.Model):
+    """
+    树形表格，从simplepro 6.0.0版本开始支持
+    """
+    title = fields.CharField(max_length=32, verbose_name='名称')
+
+    # 这个字段，是用来处理树形表格的，有这个字段才能知道级联的关系
+    # 在树形表格中，删除某一级，程序不会级联删除下面的所有子级，所以需要利用数据库的级联删除，设置on_delete=models.CASCADE
+    parent = fields.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, verbose_name='父级')
+
+    desc = fields.CharField(max_length=32, verbose_name='描述', null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    # 一定要有这个字段，用来显示在列表页中
+    def name(self):
+        return self.title
+    name.short_description = '标题'
+
+    class Meta:
+        verbose_name = '树形表格'
+        verbose_name_plural = '树形表格'
+
 @admin.register(TreeTable)
 class TreeTableAdmin(admin.ModelAdmin, SourceCodeAdmin):
     """
@@ -419,7 +452,7 @@ class TreeTableAdmin(admin.ModelAdmin, SourceCodeAdmin):
     # ⚠️注意：如果存在get_queryset，这个方法将会被调用2次以上
     # 第一次获取根节点的数据，后续递归获取子节点都是通过该queryset来查询
 
-    # 要显示的字段
+    # 要显示的字段，name一定要有，固定了。
     list_display = ('name', 'desc', 'parent')
 
     # 这个树形表格也可以结合树形下拉筛选框使用，但是这个不适合，因为表格已经树形显示了，再进行筛选，会导致树形表格无法正确的显示
@@ -443,6 +476,18 @@ class TreeTableAdmin(admin.ModelAdmin, SourceCodeAdmin):
         """
         return self.list_display_tree_cascade
 ```
+
+### 外键联动
+
+> 如果想要在其他地方使用这种级联插件，可以直接使用`TreeComboboxField`字段，来引用。
+
+![](/images/three_cascade.png)
+
+::: tip 三级联动例子
+ [点击这里查看](/demo/three_cascade)
+:::
+
+
 
 ## list_display_tree_expand_all
 

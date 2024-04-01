@@ -24,13 +24,16 @@ export default {
         },
         nav: [
             { text: '社区', link: 'https://www.mldoo.com' },
-            { text: '首页', link: '/' },
-            { text: '路线图🗺', link: '/roadmap' },
+            { text: '教程', link: '/demo/' },
             { text: '指南', link: '/guide/description' },
             { text: '配置', link: '/config/global/' },
             { text: '组件', link: '/widget/checkbox' },
             {
                 text: '版本', items: [
+                    {
+                        text: '7.4',
+                        link: '/version/7.4'
+                    },
                     {
                         text: '7.3',
                         items: [
@@ -81,6 +84,10 @@ export default {
                         { text: 'Admin配置', link: '/config/admin/field' },
                         { text: '主题配置', link: '/config/theme' },
                         { text: 'JS-SDK', link: '/config/jssdk' },
+                        { text: '弹框输入Layer', link: '/config/admin/layer.html' },
+                        { text: '行内对话框', link: '/config/admin/dialog.html' },
+                        { text: '单元格调用Action', link: '/config/admin/cell_action.html' },
+                        
                         { text: '自定义权限', link: '/config/permissions' },
                         { text: '可视化图表', link: '/config/chat' },
                         { text: '富文本插件', link: '/config/editor' },
