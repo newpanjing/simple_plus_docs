@@ -5,27 +5,28 @@ simplepro table 基于 elementui table，设置主要来自 ModelAdmin，写法�
 ## 所有字段
 
 
-| 字段                                             | 类型                     | 说明                                                                     |
-| ------------------------------------------------ | ------------------------ | ------------------------------------------------------------------------ |
-| list_display                                     | tuple                    | table 显示的字段                                                         |
-| search_fields                                    | tuple                    | 搜索框搜索的字段                                                         |
-| list_per_page                                    | int                      | 每页显示的数量                                                           |
-| list_filter                                      | array                    | 筛选字段                                                                 |
-| list_display_links                               |array| 显示连接进入编辑页的字段 |
-| [fields_options](#fields-options)            | dict                     | 表格的表头字段设置                                                       |
-| actions_show                                     | boolean                  | 显示隐藏 action，默认为 True，只有显式指定为 False 的时候才隐藏          |
-| actions                                          | array                    | [自定义按钮](/config/admin/action)                                                |
-| native_render                                    | boolean                  | 使用原生页面渲染，默认为`Flase`                                          |
-| [list_filter_multiples](#list-filter-multiples) | array                    | 自`3.1`版本起可用，搜索下拉框多选字段，比如要在`list_filter`中包含才生效 |
-| [top_html](#top-html)                            | str                      | 列表顶部显示的 html，支持 vue 组件和 element 组件，`3.1.3+` 可用         |
-| [bottom_html](#bottom-html)                      | str                      | 列表底部显示的 html，支持 vue 组件和 element 组件，`3.1.3+` 可用         |
-| [empty_value_display](#empty-value-display)                      | fun                      | 列表默认显示的空值，`5.3+`可用，`get_empty_value_display`也支持         |
-| [list_filter_tree](#list-filter-tree)                      | tuple或fun                      | 列表页树形下拉框过滤器，`6.0+`可用，`get_list_filter_tree`也支持         |
-| [get_list_filter_tree_queryset](#get-list-filter-tree-queryset)                      | fun                      | 列表页树形下拉框过滤器自定义queryset对象，`6.0+`可用|
-| [list_display_tree_cascade](#list-display-tree-cascade) | str | 表格显示为树形，`6.0+`可用 |
-| [list_display_tree_expand_all](#list-display-tree-cascade) | boolean | 表格树形展开状态，`6.0+`可用，默认为`False`不展开，这个要配合`list_display_tree_cascade`使用才有效|
-| [show_selection](#show-selection) | boolean | 设置表格显示复选框，默认为`True`显示复选框 |
-| [between_fields](#between-fields) | array | 使用区间搜索，常用于数值类型 |
+| 字段                                                            | 类型       | 说明                                                                                               |
+| --------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------- |
+| list_display                                                    | tuple      | table 显示的字段                                                                                   |
+| search_fields                                                   | tuple      | 搜索框搜索的字段                                                                                   |
+| list_per_page                                                   | int        | 每页显示的数量                                                                                     |
+| list_filter                                                     | array      | 筛选字段                                                                                           |
+| list_display_links                                              | array      | 显示连接进入编辑页的字段                                                                           |
+| [fields_options](#fields-options)                               | dict       | 表格的表头字段设置                                                                                 |
+| actions_show                                                    | boolean    | 显示隐藏 action，默认为 True，只有显式指定为 False 的时候才隐藏                                    |
+| actions                                                         | array      | [自定义按钮](/config/admin/action)                                                                 |
+| native_render                                                   | boolean    | 使用原生页面渲染，默认为`Flase`                                                                    |
+| [list_filter_multiples](#list-filter-multiples)                 | array      | 自`3.1`版本起可用，搜索下拉框多选字段，比如要在`list_filter`中包含才生效                           |
+| [top_html](#top-html)                                           | str        | 列表顶部显示的 html，支持 vue 组件和 element 组件，`3.1.3+` 可用                                   |
+| [bottom_html](#bottom-html)                                     | str        | 列表底部显示的 html，支持 vue 组件和 element 组件，`3.1.3+` 可用                                   |
+| [empty_value_display](#empty-value-display)                     | fun        | 列表默认显示的空值，`5.3+`可用，`get_empty_value_display`也支持                                    |
+| [list_filter_tree](#list-filter-tree)                           | tuple或fun | 列表页树形下拉框过滤器，`6.0+`可用，`get_list_filter_tree`也支持                                   |
+| [get_list_filter_tree_queryset](#get-list-filter-tree-queryset) | fun        | 列表页树形下拉框过滤器自定义queryset对象，`6.0+`可用                                               |
+| [list_display_tree_cascade](#list-display-tree-cascade)         | str        | 表格显示为树形，`6.0+`可用                                                                         |
+| [list_display_tree_field](#list-display-tree-field)             | string     | 表格树形显示字段，`7.6+`可用                                                                       |
+| [list_display_tree_expand_all](#list-display-tree-cascade)      | boolean    | 表格树形展开状态，`6.0+`可用，默认为`False`不展开，这个要配合`list_display_tree_cascade`使用才有效 |
+| [show_selection](#show-selection)                               | boolean    | 设置表格显示复选框，默认为`True`显示复选框                                                         |
+| [between_fields](#between-fields)                               | array      | 使用区间搜索，常用于数值类型                                                                       |
 
 
 ## top_html
@@ -462,6 +463,9 @@ class TreeTableAdmin(admin.ModelAdmin, SourceCodeAdmin):
     # 这个字段必须有，才会有树形的效果
     list_display_tree_cascade = 'parent'
 
+    # 指定树形显示的字段，默认是name，自从7.6开始，支持指定字段，之前所有版本 固定为字符串：“name”，可以根据需要配置为自己list_display中的字段
+    list_display_tree_field = 'name'
+
     # 展开状态，默认不展开
     list_display_tree_expand_all = False
 
@@ -487,7 +491,19 @@ class TreeTableAdmin(admin.ModelAdmin, SourceCodeAdmin):
  [点击这里查看](/demo/three_cascade)
 :::
 
+## list_display_tree_field
+> 在7.6之前的版本中，这个字段固定为`name`，7.6之后支持自定义字段。这个字段不配置也可以，默认为`name`
 
+```python
+    # 指定树形显示的字段，默认是name，自从7.6开始，支持指定字段，之前所有版本 固定为字符串：“name”
+    list_display_tree_field = 'name'
+```
+
+::: tip list_display_tree_field 说明
+
+这个字段只是在树形表格中标识哪个字段可以折叠与展开，默认的情况下是name这个特殊的字段，现在7.6开放了自定义字段，这个字段需要再list_display中存在。一般都是用第一个字段，来展示树形。
+配置id，name，title等等都可以。
+:::
 
 ## list_display_tree_expand_all
 
