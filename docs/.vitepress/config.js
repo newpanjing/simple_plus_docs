@@ -31,7 +31,10 @@ export default {
             {
                 text: '版本', items: [
                     {
-                        text: '☀️7.8',
+                        text: '☀️7.9',
+                        link: '/version/7.9'
+                    },{
+                        text: '7.8',
                         link: '/version/7.8'
                     },
                     {
