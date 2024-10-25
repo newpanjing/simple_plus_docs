@@ -22,7 +22,7 @@ SIMPLEUI_CONFIG = {
     'menus': [{
         'name': '社区',
         'icon': 'fas fa-code',
-        'url': 'https://simpleui.72wo.com',
+        'url': 'https://simpleui.noondot.com',
         'codename': 'community'
     }, {
         'name': '产品',
@@ -34,10 +34,10 @@ SIMPLEUI_CONFIG = {
             'icon': 'far fa-surprise',
             'models': [{
                 'name': 'Pro文档',
-                'url': 'https://simpleui.72wo.com/docs/simplepro'
+                'url': 'https://simpleui.noondot.com/docs/simplepro'
             }, {
                 'name': '购买Pro',
-                'url': 'http://simpleui.72wo.com/simplepro'
+                'url': 'http://simpleui.noondot.com/simplepro'
             }]
         }, {
             'name': 'SimpleUI',
@@ -47,7 +47,7 @@ SIMPLEUI_CONFIG = {
             'newTab': True
         }, {
             'name': '图片转换器',
-            'url': 'https://convert.72wo.com',
+            'url': 'https://convert.noondot.com',
             'icon': 'fab fa-github',
             'codename': 'convert',
             'newTab': True
@@ -104,4 +104,4 @@ SIMPLEUI_CONFIG = {
 
 ## 自定义菜单权限
 
-教程参考：[自定义菜单权限](https://www.mldoo.com/topic/221)
+教程参考：[自定义菜单权限](https://www.noondot.com/topic/221)

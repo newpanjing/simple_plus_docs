@@ -173,6 +173,6 @@ from django.shortcuts import redirect
     icon='fa fa-rocket',
 )
 def btn1(self, request, queryset):
-    return redirect('https://simpleui.72wo.com')
+    return redirect('https://simpleui.noondot.com')
 
 ```

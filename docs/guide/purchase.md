@@ -6,7 +6,7 @@ Simple Pro分为域名版、源码版、和7.0以下的旧版，其中旧版不�
 
 + 在线版
 
-点击 [https://www.mldoo.com/product/simplepro](https://www.mldoo.com/product/simplepro)
+点击 [https://www.noondot.com/product/simplepro](https://www.noondot.com/product/simplepro)
 
 + 源码版
 

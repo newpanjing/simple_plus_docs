@@ -88,7 +88,7 @@ simplepro内置了一个默认的首页，只是由简单的快捷导航与最�
 ### 配置URL
 
 ```python
-SIMPLEUI_HOME_PAGE = 'https://www.mldoo.com'
+SIMPLEUI_HOME_PAGE = 'https://www.noondot.com'
 # 标题
 SIMPLEUI_HOME_TITLE = '猿堆堆社区'
 # 图标

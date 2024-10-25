@@ -37,7 +37,7 @@ SIMPLEPRO_CAPTCHA_ENABLED = True
 
 > 目前暂时不支持任何自定义，如果有需求，可以购买源码版
 
-[https://www.mldoo.com/simplepro#buy](https://www.mldoo.com/simplepro#buy)
+[https://www.noondot.com/simplepro#buy](https://www.noondot.com/simplepro#buy)
 
 ### 验证码字体商用版权
 

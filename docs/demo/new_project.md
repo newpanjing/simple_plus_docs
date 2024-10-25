@@ -146,7 +146,7 @@ SIMPLEPRO_SECRET_KEY = '您的安全秘钥'
 
 ::: tip 安全秘钥获取
 
-登录到社区 https://www.mldoo.com，点击我的许可证即可查看。
+登录到社区 https://www.noondot.com，点击我的许可证即可查看。
 
 :::
 
@@ -205,7 +205,7 @@ python manage.py runserver
 
 注：部署到服务器后，遇到最多的问题都是静态文件的404问题。
 
-参考文章：https://www.mldoo.com/topic/20684
+参考文章：https://www.noondot.com/topic/20684
 
 ## 完整的demo
 
@@ -213,7 +213,7 @@ https://github.com/newpanjing/simplepro_demo
 
 如果创建项目、报错或者有疑问，可以加入官方QQ群进行交流。
 
-也可以到社区进行交流：https://www.mldoo.com
+也可以到社区进行交流：https://www.noondot.com
 
 ::: tip 交流群
 

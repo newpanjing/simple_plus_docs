@@ -2,7 +2,7 @@
 
 从 SimplePro <Badge type="tip" text="7.0" /> 开始，我们切换为域名的激活方式
 
-1. 需要先打开 [www.mldoo.com/product/simplepro](https://www.mldoo.com/product/simplepro) 购买许可证
+1. 需要先打开 [www.noondot.com/product/simplepro](https://www.noondot.com/product/simplepro) 购买许可证
 
 2. 打开我的许可证->域名管理->新增，进行域名绑定
 

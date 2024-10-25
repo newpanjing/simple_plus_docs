@@ -75,8 +75,8 @@ class DialogAdmin(admin.ModelAdmin):
 
     def dialog_lists(self, model):
         return MultipleCellDialog([
-            ModalDialog(url='https://simpleui.72wo.com', title='Simple社区'),
-            ModalDialog(url='https://simpleui.72wo.com/docs/simplepro', title='SimplePro文档',
+            ModalDialog(url='https://simpleui.noondot.com', title='Simple社区'),
+            ModalDialog(url='https://simpleui.noondot.com/docs/simplepro', title='SimplePro文档',
                         cell='<el-link type="primary">文档</el-link>'),
         ])
     # 这个是列头显示的文本

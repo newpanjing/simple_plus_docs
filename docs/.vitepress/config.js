@@ -23,7 +23,7 @@ export default {
             pattern: 'https://github.com/newpanjing/simple_plus_docs/edit/main/docs/:path'
         },
         nav: [
-            { text: '社区', link: 'https://www.mldoo.com' },
+            { text: '社区', link: 'https://www.noondot.com' },
             { text: '教程', link: '/demo/' },
             { text: '指南', link: '/guide/description' },
             { text: '配置', link: '/config/global/' },
@@ -67,7 +67,7 @@ export default {
                     { text: 'v7.0', link: '/version/7.0' },
                 ]
             },
-            { text: '演示', link: 'https://www.mldoo.com/demo/simplepro' },
+            { text: '演示', link: 'https://www.noondot.com/demo/simplepro' },
         ],
         sidebar: {
             '/': [

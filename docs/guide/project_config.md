@@ -4,7 +4,7 @@
 
 ::: tip 安全秘钥获取
 
-登录到社区 https://www.mldoo.com，点击右上角头像，"我的许可证" 即可查看。
+登录到社区 https://www.noondot.com，点击右上角头像，"我的许可证" 即可查看。
 
 :::
 
@@ -83,13 +83,13 @@ urlpatterns = [
 `settings.py`文件
 
 ```python
-# 安全秘钥，登录官方网站点击我的头像(https://www.mldoo.com)，获取秘钥
+# 安全秘钥，登录官方网站点击我的头像(https://www.noondot.com)，获取秘钥
 SIMPLEPRO_SECRET_KEY = 'b16742bcc30c4662a57c6602792437e3'
 ```
 
 ::: tip 安全秘钥获取
 
-登录到社区 https://www.mldoo.com，点击我的许可证即可查看。
+登录到社区 https://www.noondot.com，点击我的许可证即可查看。
 
 :::
 

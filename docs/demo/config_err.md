@@ -18,4 +18,4 @@ python manage.py runserver --insecure
 
 想要找到原因，真正的解决请参考这篇帖子进行处理：
 
-https://www.mldoo.com/topic/20684
+https://www.noondot.com/topic/20684

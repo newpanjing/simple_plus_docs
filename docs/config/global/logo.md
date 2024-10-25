@@ -7,7 +7,7 @@
 在`settings.py`中加入
 
 ```python
-SIMPLEUI_LOGO='https://www.mldoo.com/static/assets/images/logo.png'
+SIMPLEUI_LOGO='https://www.noondot.com/static/assets/images/logo.png'
 ```
 
 当然，您也可以用本地图片，前提是您已经配置好了静态文件目录。

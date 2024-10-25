@@ -22,7 +22,7 @@
 
 + [配置自定义登录页图片和名称](/config/global/logo.html)
 + [无法登录、页面报错、验证码不显示](/demo/config_err)
-+ [图片不显示、404、报错](https://www.mldoo.com/topic/20684)
++ [图片不显示、404、报错](https://www.noondot.com/topic/20684)
 
 + [提示依赖包缺失Django不存在]()
 + [创建虚拟环境]()
