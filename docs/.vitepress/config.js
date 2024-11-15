@@ -31,7 +31,11 @@ export default {
             {
                 text: '版本', items: [
                     {
-                        text: '☀️7.9',
+                        text: '☀️7.10',
+                        link: '/version/7.10'
+                    },
+                    {
+                        text: '7.9',
                         link: '/version/7.9'
                     },{
                         text: '7.8',
@@ -120,6 +124,7 @@ export default {
                 { text: "<-- 文档首页", link: "/" },
                 {
                     text: "Admin配置", items: [
+                        {text:"页面路径查询参数", link: "/config/admin/query_params" },
                         { text: "字段&方法", link: "/config/admin/field" },
                         { text: "自定义按钮", link: "/config/admin/action" },
                         { text: "动态显示", link: "/config/admin/dynamic_display" },
