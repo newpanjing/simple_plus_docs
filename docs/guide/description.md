@@ -18,7 +18,7 @@
 + 自定义对话框
 + ...等等
 
-与其介绍这么多，不如亲自点击 <a href="http://175.178.229.216:9001/admin/login/?next=/" target="_blank">在线演示Demo查看</a> 一番
+与其介绍这么多，不如亲自点击 <a href="http://42.193.143.59:9001/admin/login/?next=/" target="_blank">在线演示Demo查看</a> 一番
 
 > 用户名：simpleui
 

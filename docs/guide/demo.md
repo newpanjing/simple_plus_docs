@@ -2,7 +2,7 @@
 
 ## 在线Demo
 
-http://175.178.229.216:9001/admin/login/?next=/
+http://42.193.143.59:9001/admin/login/?next=/
 
 ## 源码
 
